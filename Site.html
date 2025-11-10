@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        :root {
+            --brand-green: #8CC63F; 
+            --brand-dark: #2d3748;  
+        }
+        .bg-brand-dark { background-color: var(--brand-dark); }
+        .text-brand-green { color: var(--brand-green); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        .btn-contact {
+            transition: all 0.3s ease;
+        }
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .lang-btn {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .lang-btn.active {
+            background-color: var(--brand-green);
+            color: var(--brand-dark);
+        }
+        .lang-btn:not(.active):hover {
+            border-color: var(--brand-green);
+        }
+        #main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-white relative">
+    <div id="main-content">
+        <div class="absolute top-4 right-4 z-10">
+            <div class="flex items-center gap-1 bg-gray-800 p-1 rounded-full shadow-lg">
+                <button id="lang-en" class="lang-btn text-sm" onclick="setLanguage('en')">EN</button>
+                <button id="lang-hu" class="lang-btn text-sm" onclick="setLanguage('hu')">HU</button>
+                <button id="lang-ru" class="lang-btn text-sm" onclick="setLanguage('ru')">RU</button>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
+
+            <header class="text-center my-8 md:my-12">
+                <h1 class="text-4xl sm:text-5xl font-black tracking-tight" data-key="headerTitle">
+                    <span class="text-brand-green">Traffic Space</span>
+                </h1>
+            </header>
+
+            <section class="my-12 md:my-16 bg-brand-green text-brand-dark p-6 sm:p-8 md:p-10 rounded-2xl text-center shadow-2xl">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black leading-tight" data-key="ctaTitle">
+                    Сотрудничаем с банками MBH BB и K&H, а также рассмотрим Gránit и CIB
+                </h2>
+                <p class="text-lg sm:text-xl font-semibold mt-2" data-key="ctaSubtitle">
+                    Оплата наличными при личной встрече в любом удобном для вас месте.
+                </p>
+            </section>
+
+            <section class="my-12 md:my-16 text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2" data-key="contactTitle">Если у вас есть карты MBH BB, K&H, Gránit или CIB — свяжитесь с нами!</h2>
+                <p class="text-base sm:text-lg text-gray-400 mb-8" data-key="contactSubtitle">Мы онлайн и готовы ответить на все вопросы.</p>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                    <a href="https://t.me/Office_Hungary" target="_blank" class="btn-contact bg-gray-700 hover:bg-gray-600 flex items-center gap-3 px-5 py-3 sm:px-6 rounded-lg">
+                        <i class="ph-bold ph-telegram-logo text-2xl text-sky-400"></i>
+                        <span class="font-semibold text-sm sm:text-base">Telegram</span>
+                    </a>
+                    <a href="https://wa.me/36204991991" target="_blank" class="btn-contact bg-gray-700 hover:bg-gray-600 flex items-center gap-3 px-5 py-3 sm:px-6 rounded-lg">
+                        <i class="ph-bold ph-whatsapp-logo text-2xl text-green-400"></i>
+                        <span class="font-semibold text-sm sm:text-base">WhatsApp</span>
+                    </a>
+                    <a href="https://www.facebook.com/share/1BDEQgGDSd/?mibextid=wwXIfr" target="_blank" class="btn-contact bg-gray-700 hover:bg-gray-600 flex items-center gap-3 px-5 py-3 sm:px-6 rounded-lg">
+                        <i class="ph-bold ph-facebook-logo text-2xl text-blue-500"></i>
+                        <span class="font-semibold text-sm sm:text-base">Facebook</span>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="my-12 md:my-16">
+                 <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl max-w-3xl mx-auto">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8" data-key="guaranteesTitle">Наши гарантии</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="ph-bold ph-timer text-3xl text-brand-green mt-1 flex-shrink-0"></i>
+                            <p class="text-base sm:text-lg text-gray-300" data-key="guarantee1">Вернем карту в рабочем состоянии в течение часа.</p>
+                        </div>
+                         <div class="flex items-start gap-4">
+                            <i class="ph-bold ph-eye text-3xl text-brand-green mt-1 flex-shrink-0"></i>
+                            <p class="text-base sm:text-lg text-gray-300" data-key="guarantee2">Все операции будут проведены в вашем присутствии, нам нечего скрывать.</p>
+                        </div>
+                         <div class="flex items-start gap-4">
+                            <i class="ph-bold ph-hands-clapping text-3xl text-brand-green mt-1 flex-shrink-0"></i>
+                            <p class="text-base sm:text-lg text-gray-300" data-key="guarantee3">Личная встреча, знакомство и надежда на долгосрочное сотрудничество.</p>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <div class="w-full h-px bg-gray-700 my-12 md:my-16"></div>
+
+            <section class="my-12 md:my-16 p-6 sm:p-8 bg-gray-800 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6" data-key="howTitle">Как мы работаем</h2>
+                <p class="text-base sm:text-lg text-gray-300 text-center max-w-2xl mx-auto" data-key="howText">
+                    Мы специализируемся на валютном арбитраже и получаем прибыль от разницы курсов. Наша команда использует собственный капитал для операций, что гарантирует стабильность и надежность.
+                </p>
+                <div class="mt-8 p-6 border border-brand-green rounded-xl bg-brand-dark text-center">
+                    <p class="text-lg font-semibold" data-key="howExampleTitle">Пример нашей работы:</p>
+                    <p class="text-xl sm:text-2xl font-bold mt-2" data-key="howExampleText">
+                        Купили валюту в одной стране по <span class="text-brand-green">низкому курсу</span> 
+                        <i class="ph ph-arrows-left-right mx-2"></i>
+                        Продали в другой по <span class="text-brand-green">высокому курсу</span>
+                    </p>
+                    <p class="text-sm sm:text-md text-gray-400 mt-2" data-key="howExampleReason">
+                        Для таких постоянных переводов нам нужно большое количество банковских карт.
+                    </p>
+                </div>
+            </section>
+
+            <section class="my-12 md:my-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10" data-key="whyTitle">Почему с нами выгодно</h2>
+                <div class="grid md:grid-cols-3 gap-6 sm:gap-8 text-center">
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <i class="ph-bold ph-trend-up text-5xl text-brand-green mb-4"></i>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2" data-key="whyArg1Title">6+ лет на рынке</h3>
+                        <p class="text-gray-400 text-sm sm:text-base" data-key="whyArg1Text">Мы — команда с многолетним опытом и безупречной репутацией.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <i class="ph-bold ph-rocket-launch text-5xl text-brand-green mb-4"></i>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2" data-key="whyArg2Title">Карьерный рост</h3>
+                        <p class="text-gray-400 text-sm sm:text-base" data-key="whyArg2Text">Лучшие партнеры становятся частью нашей команды с долей от прибыли.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <i class="ph-bold ph-wallet text-5xl text-brand-green mb-4"></i>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2" data-key="whyArg3Title">Отличная оплата</h3>
+                        <p class="text-gray-400 text-sm sm:text-base" data-key="whyArg3Text">Мы предлагаем лучшие условия на рынке и гибкий график.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-12 md:my-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10" data-key="paymentTitle">Условия оплаты</h2>
+                <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+                    <div class="bg-gray-800 p-6 sm:p-8 rounded-xl border-l-4 border-brand-green">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2" data-key="paymentStartTitle">Начальная оплата</h3>
+                        <p class="text-3xl sm:text-4xl font-black text-brand-green my-3">$200 — $2000</p>
+                        <p class="text-gray-300 text-sm sm:text-base" data-key="paymentStartText">Сумма зависит от лимитов вашей карты. Чем выше лимиты, тем выше ваш доход.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 sm:p-8 rounded-xl border-l-4 border-brand-green">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2" data-key="paymentGrowthTitle">Перспективы роста</h3>
+                        <p class="text-3xl sm:text-4xl font-black text-brand-green my-3" data-key="paymentGrowthValue">10% от оборота</p>
+                        <p class="text-gray-300 text-sm sm:text-base" data-key="paymentGrowthText">После 5 успешных циклов мы готовы взять вас на работу и выплачивать стабильный процент от лимитов.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="text-center py-8 mt-8 md:mt-12 border-t border-gray-700">
+                <p class="text-gray-500 text-sm" data-key="footerText">&copy; 2025 Traffic Space. Все права защищены.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script>
+        const translations = {
+            ru: {
+                headerTitle: '<span class="text-brand-green">Traffic Space</span>',
+                ctaTitle: 'Сотрудничаем с банками MBH BB и K&H, а также рассмотрим Gránit и CIB',
+                ctaSubtitle: 'Оплата наличными при личной встрече в любом удобном для вас месте.',
+                contactTitle: 'Если у вас есть карты MBH BB, K&H, Gránit или CIB — свяжитесь с нами!',
+                contactSubtitle: 'Мы онлайн и готовы ответить на все вопросы.',
+                guaranteesTitle: 'Наши гарантии',
+                guarantee1: 'Вернем карту в рабочем состоянии в течение часа.',
+                guarantee2: 'Все операции будут проведены в вашем присутствии, нам нечего скрывать.',
+                guarantee3: 'Личная встреча, знакомство и надежда на долгосрочное сотрудничество.',
+                howTitle: 'Как мы работаем',
+                howText: 'Мы специализируемся на валютном арбитраже и получаем прибыль от разницы курсов. Наша команда использует собственный капитал для операций, что гарантирует стабильность и надежность.',
+                howExampleTitle: 'Пример нашей работы:',
+                howExampleText: 'Купили валюту в одной стране по <span class="text-brand-green">низкому курсу</span> <i class="ph ph-arrows-left-right mx-2"></i> Продали в другой по <span class="text-brand-green">высокому курсу</span>',
+                howExampleReason: 'Для таких постоянных переводов нам нужно большое количество банковских карт.',
+                whyTitle: 'Почему с нами выгодно',
+                whyArg1Title: '6+ лет на рынке',
+                whyArg1Text: 'Мы — команда с многолетним опытом и безупречной репутацией.',
+                whyArg2Title: 'Карьерный рост',
+                whyArg2Text: 'Лучшие партнеры становятся частью нашей команды с долей от прибыли.',
+                whyArg3Title: 'Отличная оплата',
+                whyArg3Text: 'Мы предлагаем лучшие условия на рынке и гибкий график.',
+                paymentTitle: 'Условия оплаты',
+                paymentStartTitle: 'Начальная оплата',
+                paymentStartText: 'Сумма зависит от лимитов вашей карты. Чем выше лимиты, тем выше ваш доход.',
+                paymentGrowthTitle: 'Перспективы роста',
+                paymentGrowthValue: '10% от оборота',
+                paymentGrowthText: 'После 5 успешных циклов мы готовы взять вас на работу и выплачивать стабильный процент от лимитов.',
+                footerText: '&copy; 2025 Traffic Space. Все права защищены.'
+            },
+            en: {
+                headerTitle: '<span class="text-brand-green">Traffic Space</span>',
+                ctaTitle: 'We cooperate with MBH BB and K&H banks, and will also consider Gránit and CIB',
+                ctaSubtitle: 'Payment in cash at a personal meeting in any place convenient for you.',
+                contactTitle: 'If you have MBH BB, K&H, Gránit, or CIB cards — contact us!',
+                contactSubtitle: 'We are online and ready to answer all your questions.',
+                guaranteesTitle: 'Our Guarantees',
+                guarantee1: 'We will return the card in working condition within an hour.',
+                guarantee2: 'All operations will be conducted in your presence; we have nothing to hide.',
+                guarantee3: 'Personal meeting, acquaintance, and hope for long-term cooperation.',
+                howTitle: 'How We Work?',
+                howText: 'We specialize in currency arbitrage and profit from exchange rate differences. Our team uses its own capital for operations, which guarantees stability and reliability.',
+                howExampleTitle: 'Example of our work:',
+                howExampleText: 'Bought currency in one country at a <span class="text-brand-green">low rate</span> <i class="ph ph-arrows-left-right mx-2"></i> Sold in another at a <span class="text-brand-green">high rate</span>',
+                howExampleReason: 'For such constant transfers, we need a large number of bank cards.',
+                whyTitle: 'Why Is It Profitable With Us?',
+                whyArg1Title: '6+ years in the market',
+                whyArg1Text: 'We are a team with many years of experience and an impeccable reputation.',
+                whyArg2Title: 'Career Growth',
+                whyArg2Text: 'The best partners become part of our team with a share of the profit.',
+                whyArg3Title: 'Excellent Payment',
+                whyArg3Text: 'We offer the best conditions on the market and a flexible schedule.',
+                paymentTitle: 'Payment Terms',
+                paymentStartTitle: 'Starting Payment',
+                paymentStartText: 'The amount depends on your card\'s limits. The higher the limits, the higher your income.',
+                paymentGrowthTitle: 'Growth Prospects',
+                paymentGrowthValue: '10% of turnover',
+                paymentGrowthText: 'After 5 successful cycles, we are ready to hire you and pay a stable percentage of the limits.',
+                footerText: '&copy; 2025 Traffic Space. All rights reserved.'
+            },
+            hu: {
+                headerTitle: '<span class="text-brand-green">Traffic Space</span>',
+                ctaTitle: 'Együttműködünk az MBH BB és a K&H bankokkal, valamint megfontoljuk a Gránit és a CIB bankokat is',
+                ctaSubtitle: 'Fizetés készpénzben, személyes találkozó alkalmával, az önnek megfelelő helyen.',
+                contactTitle: 'Ha rendelkezik MBH BB, K&H, Gránit vagy CIB kártyával — írjon nekünk!',
+                contactSubtitle: 'Elérhetőek vagyunk és készen állunk minden kérdésére válaszolni.',
+                guaranteesTitle: 'Garanciáink',
+                guarantee1: 'A kártyát egy órán belül működőképes állapotban visszaszolgáltatjuk.',
+                guarantee2: 'Minden tranzakció az ön jelenlétében történik, nincs takargatnivalónk.',
+                guarantee3: 'Személyes találkozó, ismerkedés és remény a hosszú távú együttműködésre.',
+                howTitle: 'Hogyan dolgozunk?',
+                howText: 'Szakterületünk a valutaarbitrázs, és az árfolyam-különbségeken keresünk. Csapatunk saját tőkét használ a műveletekhez, ami garantálja a stabilitást és a megbízhatóságot.',
+                howExampleTitle: 'Példa a munkánkra:',
+                howExampleText: 'Valutát vásároltunk egy országban <span class="text-brand-green">alacsony árfolyamon</span> <i class="ph ph-arrows-left-right mx-2"></i> Eladtuk egy másikban <span class="text-brand-green">magas árfolyamon</span>',
+                howExampleReason: 'Az ilyen folyamatos átutalásokhoz nagy számú bankkártyára van szükségünk.',
+                whyTitle: 'Miért éri meg velünk dolgozni?',
+                whyArg1Title: '6+ év a piacon',
+                whyArg1Text: 'Többéves tapasztalattal és kifogástalan hírnévvel rendelkező csapat vagyunk.',
+                whyArg2Title: 'Karrierlehetőség',
+                whyArg2Text: 'A legjobb partnerek csapatunk részvévé válnak, részesedéssel a profitból.',
+                whyArg3Title: 'Kiváló fizetés',
+                whyArg3Text: 'A legjobb feltételeket és rugalmas időbeosztást kínáljuk a piacon.',
+                paymentTitle: 'Fizetési feltételek',
+                paymentStartTitle: 'Kezdő fizetés',
+                paymentStartText: 'Az összeg a kártyája limitjeitől függ. Minél magasabbak a limitek, annál nagyobb a jövedelme.',
+                paymentGrowthTitle: 'Növekedési kilátások',
+                paymentGrowthValue: 'A forgalom 10%-a',
+                paymentGrowthText: '5 sikeres ciklus után készen állunk felvenni önt a csapatba, és stabil százalékot fizetni a limitek után.',
+                footerText: '&copy; 2025 Traffic Space. Minden jog fenntartva.'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`lang-${lang}`).classList.add('active');
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('auth') === 'a3f8b1c9') {
+                document.getElementById('main-content').style.display = 'block';
+                setLanguage('en');
+            } else {
+                // Показываем контент по умолчанию без авторизации
+                document.getElementById('main-content').style.display = 'block';
+                setLanguage('en');
+            }
+        });
+    </script>
+</body>
+</html>
